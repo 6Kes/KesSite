@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Explore our wide range of gaming products including consoles, games, and accessories.">
+    <meta name="keywords" content="KTEC Gaming, Products, gaming consoles, video games, gaming accessories">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - KTEC Gaming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background-color: #1a1a1a;
+        }
+        header {
+            background-color: #000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            height: 60px;
+        }
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+            color: #fff;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .products-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .products-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .product {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 250px;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .product p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        .product button {
+            background-color: #e60000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="KTEC Gaming Logo">
+        <h1>KTEC Gaming</h1>
+        <nav>
+            <a href="HomePage.html">Home</a>
+            <a href="Products.html">Products</a>
+            <a href="AboutUs.html">About Us</a>
+            <a href="Contact.html">Contact</a>
+            <a href="Cart.html">Cart</a>
+        </nav>
+    </header>
+    <section class="products-section">
+        <h1>Our Products</h1>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/console.webp" alt="Gaming Console">
+                <h2>PS 5 (Digital Edition)</h2>
+                <p>$4699.99</p>
+                <button onclick="addToCart('PS 5 (Digital Edition)', 4699.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/game.jpg" alt="Video Game">
+                <h2>Uncharted 4</h2>
+                <p>$250.00</p>
+                <button onclick="addToCart('Uncharted 4', 250.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/accessory.jpg" alt="Gaming Peripheral">
+                <h2>Logitec G502</h2>
+                <p>$199.99</p>
+                <button onclick="addToCart('Logitec G502', 199.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/headset.jpg" alt="Gaming Headset">
+                <h2>Razer BlackShark V2</h2>
+                <p>$699.99</p>
+                <button onclick="addToCart('Razer BlackShark V2', 699.99)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Contact us: +1(868)388-0688 | ktec.tt1@gmail.com</p>
+        <p>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </p>
+        <p>&copy; 2025 KTEC Gaming. All rights reserved.</p>
+    </footer>
+    <script>
+        function addToCart(productName, productPrice) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: productName, price: productPrice });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${productName} has been added to your cart!`);
+        }
+    </script>
+</body>
+</html>
